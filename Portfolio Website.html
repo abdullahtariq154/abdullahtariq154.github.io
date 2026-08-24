@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Abdullah Tariq — Lead Unity / Game Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Lead Unity / Game Engineer with 10+ years shipping cross-platform mobile games. 50+ published titles, 20M+ installs. Game Department Lead at Sybrid (Cobweb Games).">
+<meta name="author" content="Abdullah Tariq">
+<meta property="og:title" content="Abdullah Tariq — Lead Unity / Game Engineer">
+<meta property="og:description" content="10+ years shipping cross-platform mobile games. 50+ titles, 20M+ installs. Game Department Lead at Sybrid (Cobweb Games).">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230B0C12'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='700' fill='%238B7CFF' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0C12; --bg-2:#0F111A; --surface:#151726; --surface-2:#1C1F31;
+    --line:#242840; --line-2:#333a5c;
+    --text:#EDEEF5; --muted:#9CA0B8; --faint:#6B7090;
+    --violet:#8B7CFF; --violet-2:#B29CFF; --violet-dim:#5B4FBF;
+    --mint:#37E0B0; --amber:#FFB25A;
+    --maxw:1120px; --ease:cubic-bezier(.2,.7,.2,1);
+    --sans:'Instrument Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --disp:'Space Grotesk',var(--sans);
+    --mono:'Space Mono','SFMono-Regular',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  body::before{content:""; position:fixed; inset:0; z-index:0; pointer-events:none; background-image:radial-gradient(rgba(139,124,255,.10) 1px, transparent 1px); background-size:26px 26px; mask-image:radial-gradient(120% 80% at 70% 0%, #000 0%, transparent 60%); opacity:.6;}
+  body::after{content:""; position:fixed; inset:0; z-index:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 3px); opacity:.5;}
+  a{color:inherit; text-decoration:none}
+  img{display:block; max-width:100%}
+  ::selection{background:var(--violet); color:#0B0C12}
+  :focus-visible{outline:2px solid var(--violet); outline-offset:3px; border-radius:4px}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px; position:relative; z-index:1}
+  .eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--violet-2)}
+
+  header.nav{position:sticky; top:0; z-index:50; backdrop-filter:blur(12px); background:rgba(11,12,18,.72); border-bottom:1px solid var(--line);}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:64px}
+  .brand{display:flex; align-items:center; gap:11px; font-family:var(--disp); font-weight:600; letter-spacing:.01em}
+  .brand .mark{width:32px; height:32px; border-radius:9px; display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:14px; color:var(--violet); background:linear-gradient(150deg,#1a1c2e,#101120); border:1px solid var(--line-2); box-shadow:0 0 0 1px rgba(139,124,255,.12) inset, 0 6px 18px rgba(139,124,255,.10)}
+  .brand small{color:var(--faint); font-family:var(--mono); font-size:11px; font-weight:400; display:block; line-height:1; margin-top:2px}
+  .nav-links{display:flex; align-items:center; gap:28px}
+  .nav-links a{font-size:14px; color:var(--muted); transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .btn{display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; padding:10px 16px; border-radius:10px; transition:transform .18s var(--ease), background .2s, border-color .2s, box-shadow .2s; cursor:pointer; border:1px solid transparent}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--violet); color:#0B0C12; box-shadow:0 8px 22px -8px rgba(139,124,255,.7)}
+  .btn-primary:hover{background:var(--violet-2); box-shadow:0 10px 26px -6px rgba(139,124,255,.8)}
+  .btn-ghost{border-color:var(--line-2); color:var(--text); background:rgba(255,255,255,.02)}
+  .btn-ghost:hover{border-color:var(--violet-dim); background:rgba(139,124,255,.08)}
+  .nav-cta{display:flex; gap:10px; align-items:center}
+
+  .hero{position:relative; padding:70px 0 60px}
+  .hero-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:44px; align-items:center}
+  .status{display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); background:var(--surface); padding:7px 13px; border-radius:100px}
+  .dot{width:8px; height:8px; border-radius:50%; background:var(--mint); box-shadow:0 0 0 4px rgba(55,224,176,.16); animation:pulse 2.4s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(55,224,176,.18)}50%{box-shadow:0 0 0 7px rgba(55,224,176,.04)}}
+  h1.name{font-family:var(--disp); font-weight:700; font-size:clamp(44px,7vw,82px); line-height:.98; letter-spacing:-.02em; margin:20px 0 0; background:linear-gradient(180deg,#fff 30%,#c7c9dd); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .role{font-family:var(--disp); font-weight:500; font-size:clamp(17px,2.3vw,22px); color:var(--violet-2); margin:14px 0 0; letter-spacing:.01em}
+  .lede{color:var(--muted); font-size:17px; max-width:36ch; margin:18px 0 0}
+  .lede b{color:var(--text); font-weight:600}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
+  .open-tag{font-family:var(--mono); font-size:11.5px; color:var(--faint); margin-top:16px; letter-spacing:.04em}
+  .open-tag span{color:var(--mint)}
+  .hud{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:32px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--bg-2)}
+  .hud .cell{padding:15px 16px; border-right:1px solid var(--line); position:relative}
+  .hud .cell:last-child{border-right:0}
+  .hud .num{font-family:var(--disp); font-weight:700; font-size:25px; letter-spacing:-.01em; color:#fff}
+  .hud .num b{color:var(--violet)}
+  .hud .lbl{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--faint); margin-top:3px}
+
+  /* 3D scene */
+  #scene{position:relative; width:100%; height:clamp(380px,44vw,520px); touch-action:none; cursor:grab; z-index:1}
+  #scene:active{cursor:grabbing}
+  #scene canvas{display:block; width:100%; height:100%; border-radius:18px}
+  #scene .hint{position:absolute; bottom:8px; left:0; right:0; text-align:center; font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--faint); pointer-events:none; opacity:.85}
+  #scene .tip{position:absolute; padding:4px 9px; font-family:var(--mono); font-size:11px; color:#0B0C12; background:var(--violet-2); border-radius:7px; transform:translate(-50%,-140%); pointer-events:none; opacity:0; transition:opacity .15s; white-space:nowrap; z-index:3}
+  #scene.dim .hint{opacity:0}
+  .scene-fallback{display:none; position:absolute; inset:0; grid-template-columns:repeat(3,1fr); gap:12px; align-content:center; padding:6px}
+  .scene-fallback.show{display:grid}
+  .scene-fallback a{display:block; border-radius:14px; overflow:hidden; border:1px solid var(--line-2); box-shadow:0 10px 26px -16px rgba(0,0,0,.8); transition:transform .2s}
+  .scene-fallback a:hover{transform:translateY(-4px)}
+  .scene-fallback img{width:100%; aspect-ratio:1; object-fit:cover}
+
+  section{padding:84px 0; position:relative}
+  .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:38px}
+  .sec-num{font-family:var(--mono); font-size:13px; color:var(--violet); border:1px solid var(--line-2); border-radius:7px; padding:3px 8px}
+  h2.sec-title{font-family:var(--disp); font-weight:600; font-size:clamp(26px,3.6vw,38px); letter-spacing:-.015em; margin:0}
+  .sec-sub{color:var(--faint); font-size:14px; margin-left:auto; font-family:var(--mono)}
+
+  .about-grid{display:grid; grid-template-columns:1.3fr .9fr; gap:40px; align-items:start}
+  .about p{font-size:17.5px; color:#cfd2e4; margin:0 0 18px; max-width:60ch}
+  .about p b{color:#fff; font-weight:600}
+  .about .facts{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px}
+  .chip{font-family:var(--mono); font-size:12px; color:var(--muted); border:1px solid var(--line); background:var(--surface); padding:6px 11px; border-radius:8px}
+  .focus{border:1px solid var(--line); border-radius:16px; background:linear-gradient(180deg,var(--surface),#111220); padding:22px; position:relative; overflow:hidden; transform-style:preserve-3d}
+  .focus::before{content:""; position:absolute; top:-40px; right:-40px; width:140px; height:140px; background:radial-gradient(circle,rgba(139,124,255,.22),transparent 70%)}
+  .focus .k{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--mint)}
+  .focus h3{font-family:var(--disp); font-size:20px; margin:6px 0 2px}
+  .focus .co{color:var(--muted); font-size:13.5px; margin-bottom:16px}
+  .focus ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px}
+  .focus li{display:flex; align-items:center; gap:10px; font-size:14px}
+  .focus li .st{margin-left:auto; font-family:var(--mono); font-size:10px; letter-spacing:.06em; padding:2px 7px; border-radius:5px}
+  .st.live{color:#04150f; background:var(--mint)}
+  .st.dev{color:#1c1204; background:var(--amber)}
+  .focus li .g{width:6px; height:6px; border-radius:50%; background:var(--violet)}
+
+  .demos{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:-14px 0 26px}
+  .demos .lab{font-family:var(--mono); font-size:12px; color:var(--faint); letter-spacing:.05em}
+  .filters{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:26px}
+  .filter{font-family:var(--mono); font-size:12.5px; letter-spacing:.03em; color:var(--muted); border:1px solid var(--line); background:var(--surface); padding:8px 14px; border-radius:9px; cursor:pointer; transition:.2s}
+  .filter:hover{color:var(--text); border-color:var(--line-2)}
+  .filter[aria-pressed="true"]{color:#0B0C12; background:var(--violet); border-color:var(--violet)}
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; perspective:1200px}
+  .card{position:relative; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--surface); display:flex; flex-direction:column; transition:border-color .28s, box-shadow .28s; transform-style:preserve-3d; will-change:transform}
+  .card:hover{border-color:var(--line-2); box-shadow:0 26px 50px -26px rgba(0,0,0,.9), 0 0 0 1px rgba(139,124,255,.12)}
+  .card .glare{position:absolute; inset:0; z-index:3; pointer-events:none; opacity:0; transition:opacity .3s; background:radial-gradient(circle at var(--mx,50%) var(--my,0%), rgba(178,156,255,.18), transparent 45%)}
+  .card:hover .glare{opacity:1}
+  .thumb{position:relative; aspect-ratio:16/10; background:#0d0e17; overflow:hidden}
+  .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease)}
+  .card:hover .thumb img{transform:scale(1.05)}
+  .thumb.ph{display:grid; place-items:center; background:radial-gradient(120% 120% at 20% 0%, #21243a, #101120)}
+  .ph .glyph{font-size:44px; line-height:1; filter:drop-shadow(0 6px 16px rgba(139,124,255,.4))}
+  .badge-row{position:absolute; top:10px; left:10px; display:flex; gap:6px; z-index:2; flex-wrap:wrap; max-width:90%}
+  .badge{font-family:var(--mono); font-size:9.5px; letter-spacing:.07em; font-weight:700; padding:4px 7px; border-radius:6px; backdrop-filter:blur(4px)}
+  .badge.live{color:#04150f; background:rgba(55,224,176,.92)}
+  .badge.dev{color:#1c1204; background:rgba(255,178,90,.92)}
+  .badge.inst{color:#0B0C12; background:rgba(178,156,255,.95)}
+  .badge.rate{color:#0B0C12; background:rgba(255,214,110,.95)}
+  .badge.plat{color:var(--text); background:rgba(10,11,20,.7); border:1px solid var(--line-2)}
+  .card-body{padding:15px 16px 17px; display:flex; flex-direction:column; gap:8px; flex:1; transform:translateZ(28px)}
+  .card-cat{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint)}
+  .card-cat b{color:var(--violet-2); font-weight:400}
+  .card h3{font-family:var(--disp); font-weight:600; font-size:17px; margin:0; line-height:1.2}
+  .card p{font-size:13.5px; color:var(--muted); margin:0; flex:1}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px}
+  .tag{font-family:var(--mono); font-size:10.5px; color:var(--violet-2); border:1px solid var(--line); background:var(--bg-2); padding:3px 7px; border-radius:6px}
+  .card-link{font-family:var(--mono); font-size:12px; color:var(--muted); display:inline-flex; align-items:center; gap:6px; margin-top:4px; transition:.2s}
+  .card:hover .card-link{color:var(--violet-2)}
+  .card-link.disabled{color:var(--faint)}
+  .card a.stretch{position:absolute; inset:0; z-index:4; transform:translateZ(40px)}
+  .more-row{margin-top:30px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+
+  .timeline{position:relative; margin-left:6px}
+  .timeline::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:1px; background:linear-gradient(var(--violet-dim),var(--line) 60%,transparent)}
+  .tl{position:relative; padding:0 0 30px 40px}
+  .tl:last-child{padding-bottom:0}
+  .tl .node{position:absolute; left:2px; top:5px; width:14px; height:14px; border-radius:50%; background:var(--bg); border:2px solid var(--line-2)}
+  .tl.now .node{border-color:var(--mint); background:rgba(55,224,176,.15); box-shadow:0 0 0 4px rgba(55,224,176,.10)}
+  .tl .date{font-family:var(--mono); font-size:11.5px; letter-spacing:.05em; color:var(--faint)}
+  .tl .now-tag{color:var(--mint)}
+  .tl h3{font-family:var(--disp); font-weight:600; font-size:18px; margin:5px 0 1px}
+  .tl .co{color:var(--violet-2); font-size:13.5px; font-family:var(--mono)}
+  .tl .co .loc{color:var(--faint)}
+  .tl p{color:var(--muted); font-size:14px; margin:8px 0 0; max-width:64ch}
+  .earlier{margin:8px 0 0 40px; color:var(--muted); font-size:13.5px; border-left:1px solid var(--line); padding-left:18px}
+  .earlier b{color:var(--faint); font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; display:block; margin-bottom:5px}
+
+  .skills-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  .skblock{border:1px solid var(--line); border-radius:14px; background:var(--surface); padding:18px 20px}
+  .skblock h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--violet); margin:0 0 12px}
+  .skblock .row{display:flex; flex-wrap:wrap; gap:7px}
+  .skblock .s{font-size:13px; color:#d5d8ea; border:1px solid var(--line); background:var(--bg-2); padding:5px 10px; border-radius:7px}
+
+  .contact{text-align:center; padding-bottom:70px}
+  .contact .eyebrow{display:block; margin-bottom:16px}
+  .contact h2{font-family:var(--disp); font-weight:700; font-size:clamp(30px,5vw,54px); letter-spacing:-.02em; margin:0 auto; max-width:16ch; line-height:1.04; background:linear-gradient(180deg,#fff,#b9bcd4); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .contact p{color:var(--muted); max-width:52ch; margin:18px auto 30px}
+  .contact-cta{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+
+  footer{border-top:1px solid var(--line); padding:26px 0; position:relative; z-index:1}
+  .foot-in{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .foot-in span{font-family:var(--mono); font-size:12px; color:var(--faint)}
+  .foot-links{display:flex; gap:18px; flex-wrap:wrap}
+  .foot-links a{font-size:13px; color:var(--muted)}
+  .foot-links a:hover{color:var(--text)}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease)}
+  .reveal.in{opacity:1; transform:none}
+
+  @media (max-width:960px){
+    .hero{padding:48px 0 40px}
+    .hero-grid{grid-template-columns:1fr; gap:30px}
+    #scene{height:clamp(300px,70vw,380px); order:2}
+    .about-grid{grid-template-columns:1fr; gap:28px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .skills-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+    .lede{max-width:none}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 18px}
+    section{padding:64px 0}
+    .hud{grid-template-columns:repeat(2,1fr)}
+    .hud .cell:nth-child(2){border-right:0}
+    .hud .cell:nth-child(1),.hud .cell:nth-child(2){border-bottom:1px solid var(--line)}
+    .grid{grid-template-columns:1fr}
+    .sec-sub{display:none}
+    .nav-cta .btn-ghost{display:none}
+    .foot-in{justify-content:center; text-align:center}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto}
+    .reveal{opacity:1; transform:none}
+  }
+</style>
+<noscript><style>.reveal{opacity:1 !important; transform:none !important}</style></noscript>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Abdullah Tariq — home">
+      <span class="mark">AT</span>
+      <span>Abdullah Tariq<small>Lead Unity / Game Engineer</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=5585938498859771367" target="_blank" rel="noopener">Google Play ↗</a>
+      <a class="btn btn-primary" href="./Resume.pdf" download>Résumé ↓</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="status"><span class="dot"></span>Game Dept Lead · Sybrid / Cobweb Games</span>
+      <h1 class="name">Abdullah<br>Tariq</h1>
+      <p class="role">Lead Unity / Game Engineer</p>
+      <p class="lede">I design, build and <b>ship cross-platform mobile games</b> — from casual puzzles and sims to real-time multiplayer — end to end, at scale.</p>
+      <div class="hud" role="list" aria-label="Career highlights">
+        <div class="cell" role="listitem"><div class="num">10<b>+</b></div><div class="lbl">Years shipping</div></div>
+        <div class="cell" role="listitem"><div class="num">50<b>+</b></div><div class="lbl">Titles published</div></div>
+        <div class="cell" role="listitem"><div class="num">100M<b>+</b></div><div class="lbl">Installs</div></div>
+        <div class="cell" role="listitem"><div class="num">8<b>+</b></div><div class="lbl">Team led</div></div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#work">View the work</a>
+        <a class="btn btn-ghost" href="https://github.com/abdullahtariq154" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/abdullahtariq154/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <p class="open-tag">// <span>●</span> Open to remote &amp; relocation opportunities</p>
+    </div>
+    <div id="scene" aria-label="Interactive 3D gallery of shipped games — drag to spin">
+      <div class="tip" id="sceneTip"></div>
+      <div class="hint">◱ drag to spin · tap a game to open</div>
+      <div class="scene-fallback">
+        <a href="https://play.google.com/store/apps/details?id=com.fidget.toys.pop.it.antistress.relaxation.game" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/9pnhGo9nSo5C0Bc-SJkucL5Eas8on2Rotnys80eiBOWEkYUo8G17T6LBdHclr9lBYbzKardJfUEBLffWoGIK=s240" alt="Fidget Toys 3D"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.cobwebgames.snakejamescape" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/DrUtqhZfkdWZ9f39-IppF0HnFChG5bn8lcqakcXwK3DNNTKAY7SNxrr-DvyEzDqJ37KBECJ666HHoCsjzxhJVg=s240" alt="Snake Jam Escape"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.stickman.thief.puzzle.brain.games" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/bpa0AHQwg5Ky_DdfZH4niLJK7A-YRdbICBiBTLJDeB0ao54a8VgKWKODRAglEoRcazompEML0ZIIwZULDvP7Ew=s240" alt="Cat Burglar"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.cobwebgames.busjam.crowdescape" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/PAWgVvl4oCw6xmBixPuGuTSpZsaF07O4ruEf4QIFzH0NDVu1usrjbYz7snKvCD3IJOMa5z0NoMUX-sa2zOYEVw=s240" alt="Bus Jam"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.cobwebgames.happy.farm.life" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/mhNzBoYWPyz7qiafJghPxrTOq3tKZqc4QJOmdAEdLbi6CSY10Zj5_jBmHKn1mywIlS2R-An3hLRPRPg7aCSsHg=s240" alt="Happy Farm Life"></a>
+        <a href="https://play.google.com/store/apps/details?id=nummerge.number.match.puzzle.games" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/opzA-O-HiJJwAd_8-yXQleoncBXMClTvCZYr3Z4U5RcMWVEpCerN0TRYdoCkxpbvFmJK-75odlIGaHyZCrB2mQg=s240" alt="2248 Number Merge"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.supermarket.fashion.clothing.store.simulator" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/YpmekAbHEQ6aps5p_AljgcExlAgvV-wTs9QSbKFwbZ4AjVA0Zh4EfhxLkLOooR7-KS_mSne9Qbpq8mNhGuqS=s240" alt="Fashion Store 3D"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.escape.puzzle.adventure.story" target="_blank" rel="noopener"><img loading="lazy" src="https://play-lh.googleusercontent.com/yJKKneK8TOJY8N5c9kLPZXSzhR0NZFA19ui12_7BDjdzRwgQsbW44xLIJ5Htv61CkcTTXsXaTOd-5De-XDjc-Q=s240" alt="Sibling Adventure"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">About</h2><span class="sec-sub">// who's shipping</span></div>
+    <div class="about-grid">
+      <div class="about reveal">
+        <p>I'm a <b>Lead Unity / Game Engineer</b> with 10+ years turning ideas into shipped, cross-platform mobile games. I've published <b>50+ titles with 100M+ combined installs</b> — including chart-climbers like Fidget Toys 3D (10M+) and Cat Burglar (5M+) — and I've done it from every seat: engineer, tech lead, production lead, and product manager.</p>
+        <p>Today I lead the game department at <b>Sybrid</b>, where our studio <b>Cobweb Games</b> ships casual titles on Google Play and is building <b>Jackaroo Go</b>, a real-time multiplayer board game. I care about clean architecture, buttery performance on low-end hardware, and live-ops that actually move retention.</p>
+        <div class="facts">
+          <span class="chip">📍 Rawalpindi, PK</span><span class="chip">Unity · C#</span><span class="chip">Live-service</span><span class="chip">Real-time multiplayer</span><span class="chip">XR · Web3</span><span class="chip">Team leadership</span>
+        </div>
+      </div>
+      <aside class="focus reveal">
+        <div class="k">▶ Currently</div>
+        <h3>Game Department Lead</h3>
+        <div class="co">Sybrid · Cobweb Games — since Apr 2026</div>
+        <ul>
+          <li><span class="g"></span>Snake Jam Escape<span class="st live">LIVE</span></li>
+          <li><span class="g"></span>Bus Jam: Crowd Escape<span class="st live">LIVE</span></li>
+          <li><span class="g"></span>Happy Farm Life<span class="st live">LIVE</span></li>
+          <li><span class="g"></span>Jackaroo Go · multiplayer<span class="st dev">IN DEV</span></li>
+          <li><span class="g"></span>Prison Escape<span class="st dev">IN DEV</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">Selected work</h2><span class="sec-sub">// a slice of 50+ titles</span></div>
+    <div class="demos reveal">
+      <span class="lab">▶ Demos &amp; media:</span>
+      <a class="btn btn-ghost" href="https://drive.google.com/file/d/1CLH_cNhH4ll2TMN_mniAIMMBdgrI6SIB/view?usp=sharing" target="_blank" rel="noopener">Demo reel ↗</a>
+      <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1eY3c1JyH14gvAp6dtx54BSegVPyUj8fx?usp=sharing" target="_blank" rel="noopener">Media folder ↗</a>
+    </div>
+    <div class="filters reveal" role="group" aria-label="Filter projects">
+      <button class="filter" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" data-filter="new" aria-pressed="false">New · Cobweb</button>
+      <button class="filter" data-filter="mobile" aria-pressed="false">Mobile games</button>
+      <button class="filter" data-filter="xr" aria-pressed="false">XR · Metaverse</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="more-row reveal">
+      <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=5585938498859771367" target="_blank" rel="noopener">Cobweb Games on Play ↗</a>
+      <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=6874409962162558201" target="_blank" rel="noopener">Access Beyond on Play ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Experience</h2><span class="sec-sub">// 2015 → now</span></div>
+    <div class="timeline">
+      <div class="tl now reveal"><span class="node"></span>
+        <div class="date"><span class="now-tag">● NOW</span> · Apr 2026 — Present</div>
+        <h3>Lead Game Developer · Game Department Lead</h3>
+        <div class="co">Sybrid (Cobweb Games) <span class="loc">· Pakistan</span></div>
+        <p>Lead the game department and Cobweb Games mobile portfolio — technical direction, roadmap and end-to-end delivery. Shipped Snake Jam Escape, Bus Jam and Happy Farm Life in 2026; building Jackaroo Go (real-time multiplayer) and Prison Escape.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Nov 2023 — Jun 2026</div>
+        <h3>Lead Game Engineer</h3>
+        <div class="co">Imagination AI (9D Technologies) <span class="loc">· Singapore / Remote</span></div>
+        <p>Delivered 30+ mobile games (5M+ downloads); led a team of 8+, cut dev cycles ~25% with Agile, and built Firebase backends for 100K+ concurrent users.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Oct 2023 — Present</div>
+        <h3>Senior Unity Developer</h3>
+        <div class="co">Passion Pursuit Group <span class="loc">· Remote</span></div>
+        <p>Live-service games on iOS, Android &amp; WebGL from one codebase; Photon/Mirror multiplayer, live-ops and mentoring.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Oct 2023 — Present</div>
+        <h3>Lead Game Developer</h3>
+        <div class="co">ExoDexa <span class="loc">· United States / Remote</span></div>
+        <p>Cloud-gaming titles with live-ops and Web3 (wallets, NFTs); optimized WebGL/cloud-streaming builds supporting 50K+ concurrent users.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Dec 2022 — Oct 2023</div>
+        <h3>Lead Unity Developer</h3>
+        <div class="co">Genesis Lab <span class="loc">· Islamabad, PK</span></div>
+        <p>Cross-platform games with 95% code reuse (500K+ downloads in month one); stood up CI/CD and Firebase-backed live-service features.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Feb 2022 — Dec 2022</div>
+        <h3>Project Manager</h3>
+        <div class="co">FUNFITS (Pvt) Ltd. <span class="loc">· Pakistan</span></div>
+        <p>Owned the lifecycle of 8 game titles across design, dev, QA and marketing — ~95% on-time delivery.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Jul 2021 — Jan 2022</div>
+        <h3>Technical Lead</h3>
+        <div class="co">OZI Technology <span class="loc">· Lahore, PK</span></div>
+        <p>Set technical direction, coding standards and workflows for Unity projects; ran technical interviews to build the team.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Jul 2020 — Jul 2021</div>
+        <h3>Production Lead</h3>
+        <div class="co">The Gaminators! Group <span class="loc">· Lahore, PK</span></div>
+        <p>Ran the production pipeline for multiple concurrent projects (12+ people); built tooling and automation that cut manual work ~60%.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Feb 2020 — Jul 2020</div>
+        <h3>Unity Developer</h3>
+        <div class="co">Spartans Global <span class="loc">· Rawalpindi, PK</span></div>
+        <p>Built Android games focused on performance and UX; integrated ad / analytics SDKs and UI systems.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Aug 2019 — Jan 2020</div>
+        <h3>Unity 3D Developer</h3>
+        <div class="co">Jolta Technologies <span class="loc">· Rawalpindi, PK</span></div>
+        <p>Created 3D mobile games in Unity / C# and optimized the asset pipeline alongside designers and artists.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Oct 2018 — Jul 2019</div>
+        <h3>Senior Unity 3D Developer</h3>
+        <div class="co">Belta Technologies <span class="loc">· Rawalpindi, PK</span></div>
+        <p>Led and shipped Unity / C# titles for clients; optimized for broad Android device compatibility.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Mar 2017 — Sep 2018</div>
+        <h3>Unity Developer</h3>
+        <div class="co">Knock Solutions <span class="loc">· Islamabad, PK</span></div>
+        <p>Shipped multiple Android titles in Unity 3D with a focus on engagement, optimization and platform best practices.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Mar 2016 — Mar 2017</div>
+        <h3>Unity 3D Developer</h3>
+        <div class="co">Arkdotnet <span class="loc">· Islamabad, PK</span></div>
+        <p>Built Unity 3D games and applications; established foundational best practices in mobile development and C#.</p>
+      </div>
+      <div class="tl reveal"><span class="node"></span>
+        <div class="date">Jan 2015 — Mar 2018</div>
+        <h3>Unity 3D Developer · Freelance</h3>
+        <div class="co">Self-employed <span class="loc">· Islamabad, PK</span></div>
+        <p>Delivered custom game projects end-to-end for clients across casual, puzzle and action genres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">Toolbox</h2><span class="sec-sub">// what I build with</span></div>
+    <div class="skills-grid">
+      <div class="skblock reveal"><h4>Engines &amp; Languages</h4><div class="row"><span class="s">Unity 2D/3D</span><span class="s">C#</span><span class="s">URP</span><span class="s">Shader Graph / HLSL</span><span class="s">Editor Extensions</span><span class="s">Unreal (Blueprints)</span><span class="s">Babylon.js</span><span class="s">WebGL</span></div></div>
+      <div class="skblock reveal"><h4>Multiplayer &amp; Backend</h4><div class="row"><span class="s">Real-time multiplayer</span><span class="s">Matchmaking</span><span class="s">Photon</span><span class="s">Mirror</span><span class="s">Firebase</span><span class="s">Firestore</span><span class="s">Cloud Functions</span><span class="s">REST APIs</span><span class="s">Node.js</span></div></div>
+      <div class="skblock reveal"><h4>Architecture</h4><div class="row"><span class="s">SOLID</span><span class="s">Zenject / VContainer (DI)</span><span class="s">MVC / MVP</span><span class="s">Addressables</span><span class="s">Modular &amp; Scalable</span><span class="s">Microservices</span></div></div>
+      <div class="skblock reveal"><h4>Live Ops &amp; Monetization</h4><div class="row"><span class="s">Live-ops</span><span class="s">Remote Config</span><span class="s">A/B Testing</span><span class="s">AdMob</span><span class="s">Unity Ads</span><span class="s">IAP</span><span class="s">Firebase Analytics</span><span class="s">GameAnalytics</span><span class="s">Adjust</span></div></div>
+      <div class="skblock reveal"><h4>Platforms &amp; Delivery</h4><div class="row"><span class="s">Android</span><span class="s">iOS</span><span class="s">WebGL</span><span class="s">Windows</span><span class="s">AR / VR (XR)</span><span class="s">Cloud gaming / Pixel Streaming</span><span class="s">CI/CD (Jenkins, Unity Cloud Build)</span><span class="s">Docker</span></div></div>
+      <div class="skblock reveal"><h4>Leadership</h4><div class="row"><span class="s">Team leadership</span><span class="s">Agile / Scrum</span><span class="s">Product &amp; roadmap</span><span class="s">Code review</span><span class="s">Mentoring</span><span class="s">Tech docs</span><span class="s">Web3 (wallets, NFTs)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal">// let's talk</span>
+    <h2 class="reveal">Let's build something people play.</h2>
+    <p class="reveal">Hiring for a lead role, building a studio, or need a multiplayer / live-service title shipped? I'd love to hear about it.</p>
+    <div class="contact-cta reveal">
+      <a class="btn btn-primary" href="mailto:abdullahtariq154@gmail.com">abdullahtariq154@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/abdullahtariq154/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=5585938498859771367" target="_blank" rel="noopener">Google Play ↗</a>
+      <a class="btn btn-ghost" href="./Resume.pdf" download>Résumé ↓</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© 2026 Abdullah Tariq — designed &amp; built by me.</span>
+    <div class="foot-links">
+      <a href="https://github.com/abdullahtariq154" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/abdullahtariq154/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://play.google.com/store/apps/dev?id=5585938498859771367" target="_blank" rel="noopener">Cobweb Games</a>
+      <a href="https://play.google.com/store/apps/dev?id=6874409962162558201" target="_blank" rel="noopener">Access Beyond</a>
+      <a href="mailto:abdullahtariq154@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const PLAY = "https://play.google.com/store/apps/details?id=";
+const SS = "=w526-h296";
+const IMG = "https://abdullahtariq154.github.io/images/"; // repo-hosted screenshots (also work locally)
+const projects = [
+  // ===== NEW — Cobweb Games (Sybrid) =====
+  {t:"Jackaroo Go", cat:"new", label:"Board · Multiplayer", studio:"Cobweb Games", status:"dev", plat:"Android · iOS",
+   desc:"Real-time multiplayer marbles-and-cards board game: online matchmaking, 1v1 & 2v2 team play, private rooms, in-game chat and leaderboards.",
+   tags:["Unity","C#","Real-time MP","Matchmaking"], glyph:"🎲"},
+  {t:"Snake Jam Escape", cat:"new", label:"Puzzle", studio:"Cobweb Games", status:"live", plat:"Android",
+   desc:"Relaxing snake-maze escape puzzle — tap-to-move, hundreds of handcrafted levels, and boosters (Hint, Grid Vision, Add Time).",
+   tags:["Unity","C#","Level design"], img:"https://play-lh.googleusercontent.com/X5ooHWGnaGDhk8fI7x8UdFmQDpWa09Ll24ZxsytwD9kE7gC3yfGGFQUO_UulzkczdqOkiyBCYZBoH7jZOEx8_A"+SS, link:PLAY+"com.cobwebgames.snakejamescape"},
+  {t:"Bus Jam Puzzle: Crowd Escape", cat:"new", label:"Puzzle", studio:"Cobweb Games", status:"live", plat:"Android",
+   desc:"Sort passengers, clear the crowd and solve escalating bus-jam logic puzzles across ever-trickier levels.",
+   tags:["Unity","C#","Puzzle systems"], img:"https://play-lh.googleusercontent.com/y7Wi1h88oW_zZ7ZbcJHRETWqRQiN5zvI6XxGkMpTlU4ukJxy2qlW83qh1pDs7duPzBjMVoI4xs_EKX3S7eRKdQ"+SS, link:PLAY+"com.cobwebgames.busjam.crowdescape"},
+  {t:"Happy Farm Life", cat:"new", label:"Simulation", studio:"Cobweb Games", status:"live", plat:"Android",
+   desc:"3D farming & village-builder sim — grow crops, raise animals, run factories and a trade economy, and expand your land.",
+   tags:["Unity","C#","Economy","3D"], img:"https://play-lh.googleusercontent.com/c-v4lqxZ9s2AhRMsN0kVDPSkStcE1VQzb1SpcZtfQmD4ZJiAVUTcREJsjTA-54VlUQDDVSUkuhXpMMyCBjSz5g"+SS, link:PLAY+"com.cobwebgames.happy.farm.life"},
+  {t:"Prison Escape", cat:"new", label:"Puzzle · Adventure", studio:"Cobweb Games", status:"dev", plat:"Android · iOS",
+   desc:"Stealth puzzle-escape — plan the break-out, outsmart the guards and solve your way to freedom. In development.",
+   tags:["Unity","C#","Stealth AI"], glyph:"⛓️"},
+  {t:"Castle Invader", cat:"new", label:"Arcade · Defense", studio:"Cobweb Games", rating:"5.0", plat:"Android",
+   desc:"Fast arcade castle-defense — time your shots, break the walls and storm the keep.",
+   tags:["Unity","C#"], glyph:"🏰", link:PLAY+"com.CobwebGames.CastleInvader"},
+  {t:"Penguin Jumping", cat:"new", label:"Arcade", studio:"Cobweb Games", rating:"5.0", plat:"Android",
+   desc:"One-more-jump arcade hopper — climb the pinnacle without slipping off the ice.",
+   tags:["Unity","C#"], glyph:"🐧", link:PLAY+"com.CobwebGames.PenguinPinnacle"},
+  {t:"Eggi Peggi", cat:"new", label:"Casual", studio:"Cobweb Games", rating:"5.0", plat:"Android",
+   desc:"A bright, bouncy casual arcade title built for quick, satisfying sessions.",
+   tags:["Unity","C#"], glyph:"🥚", link:PLAY+"com.CobwebGames.EggiPeggi"},
+  {t:"Swift Beat", cat:"new", label:"Rhythm", studio:"Cobweb Games", rating:"3.4", plat:"Android",
+   desc:"Slice to the beat — a fast rhythm-action game synced to the music.",
+   tags:["Unity","C#","Rhythm"], glyph:"🎵", link:PLAY+"com.CobwebGames.SwiftBeat"},
+  {t:"Royal Black Jack", cat:"new", label:"Card", studio:"Cobweb Games", plat:"Android",
+   desc:"Classic blackjack with a clean casino feel — hit, stand and beat the dealer.",
+   tags:["Unity","C#"], glyph:"♠️", link:PLAY+"com.cobwebgames.royalblackjack"},
+
+  // ===== Access Beyond (ILK Teknoloji) =====
+  {t:"Fidget Toys 3D — Pop it Game", cat:"mobile", label:"Simulation", studio:"Access Beyond", installs:"10M+", plat:"Android · Windows",
+   desc:"Antistress fidget-toy sandbox — pop-its, spinners, ASMR toys and dozens of satisfying mini-toys, updated with new toys every release.",
+   tags:["Unity","C#","3D"], img:"https://play-lh.googleusercontent.com/Wo0yPjten3iPKESmfJrzgBZ1CsT-CKPJ6_WnWOldD9jiJR4NVnRmvr1YlkClasOKxel7tTW7wNRUJ0q3NmcH"+SS, link:PLAY+"com.fidget.toys.pop.it.antistress.relaxation.game"},
+  {t:"Cat Burglar: Brain Test Puzzle", cat:"mobile", label:"Puzzle", studio:"Access Beyond", installs:"5M+", plat:"Android",
+   desc:"Sneaky brain-teaser — dodge traps, spot the clues, and pull off tricky heists to steal the treasure.",
+   tags:["Unity","C#","Puzzle"], img:"https://play-lh.googleusercontent.com/F8mNDRKWI8EVLFzqFCy7KhWmdBtf_Br9p0k8xzEFG7PDn4PlbTOhv2xdSC5R7MrPx04Hik7kc-5IgYw3hzGH"+SS, link:PLAY+"com.stickman.thief.puzzle.brain.games"},
+  {t:"2248 Number Merge Puzzle", cat:"mobile", label:"Puzzle · Merge", studio:"Access Beyond", installs:"1M+", plat:"Android",
+   desc:"Classic 2048-style number-merge puzzle with power-ups, themes, jigsaw mode and endless play. 4.1★.",
+   tags:["Unity","C#"], img:"https://play-lh.googleusercontent.com/Ic5yFZ-LYi5fJGWuXZIoos_plCaJL30FgN5NOkg7-FWC2R-k3hEZJtBCwoVG1U1Tcu810SW2ePahjZjIRFiC4pc"+SS, link:PLAY+"nummerge.number.match.puzzle.games"},
+  {t:"Fashion Store Simulator 3D", cat:"mobile", label:"Simulation", studio:"Access Beyond", installs:"1M+", plat:"Android",
+   desc:"Run a fashion retail empire — stock products, serve customers, dress-up mode, hire staff and upgrade your store in 3D.",
+   tags:["Unity","C#","3D","Economy"], img:"https://play-lh.googleusercontent.com/yUGUMapZGaQhH0Yg7MS1LYxMdRRKjxJqDz4PCxWyCfn-kxlkJzIz0G47riE6IXJ5bExJO92Y4d422-7Op2LnZc8"+SS, link:PLAY+"com.supermarket.fashion.clothing.store.simulator"},
+  {t:"Sibling Adventure: Puzzle Game", cat:"mobile", label:"Puzzle · Co-op", studio:"Access Beyond", installs:"500K+", plat:"Android",
+   desc:"Two-hero co-op puzzle adventure — switch between brother and sister, each with unique abilities, to solve story-driven levels.",
+   tags:["Unity","C#","Addressables"], img:"https://play-lh.googleusercontent.com/Y2x_r6pU3SeMnZJMOlTqqlZZXou25gfPxu7V0kDgwxO6K-WpTF-Fm37WDygiDL8eOi5RMgmKcKGNPNaaf12C_g"+SS, link:PLAY+"com.escape.puzzle.adventure.story"},
+
+  // ===== Earlier catalogue =====
+  {t:"Sniper Shooting", cat:"mobile", label:"Action", installs:"10M+", plat:"Android",
+   desc:"Sniper action with a custom controller, AI targets and physics.",
+   tags:["Unity","C#","AI"], img:IMG+"4.png", link:PLAY+"com.gamexis.sniper.professional.action.game.apps"},
+  {t:"Idle Restaurant Tycoon", cat:"mobile", label:"Idle · Match-3", plat:"Android · iOS",
+   desc:"Build a food empire one match at a time — idle economy meets match-3 progression.",
+   tags:["Unity","C#"], img:IMG+"3.jpg", link:PLAY+"com.idle.restaurant.food.tycoon.game"},
+  {t:"Wild Run: Endless Chase", cat:"mobile", label:"Casual · Runner", plat:"Android · iOS",
+   desc:"Casual endless survival runner, heavily optimized for low-end devices.",
+   tags:["Unity","C#","Optimization"], img:IMG+"1.jpg", link:PLAY+"com.wildrun.endlesssurvival.foxrun.chasegames"},
+  {t:"Street Racing: Legends", cat:"mobile", label:"Racing", plat:"Android",
+   desc:"Drift, burn rubber and rise as the street champion in a fast arcade racer.",
+   tags:["Unity","C#","AI"], img:IMG+"9.jpg", link:PLAY+"com.srl.car.racing.games"},
+  {t:"Blade Assassin", cat:"mobile", label:"Action", plat:"Android",
+   desc:"A ninja assassin navigating maze levels, clearing enemies and hunting artifacts.",
+   tags:["Unity","C#","AI"], img:IMG+"13.jpg", link:PLAY+"com.revgames.BladeAssassins.casual"},
+  {t:"Bike Attack Race", cat:"mobile", label:"Racing", plat:"Android",
+   desc:"Endless bike racer inspired by the classic Road Rash.",
+   tags:["Unity","C#","AI"], img:IMG+"8.png", link:PLAY+"com.newera.death.racing.gang.stunt.moto"},
+  {t:"Real Car Race", cat:"mobile", label:"Racing", plat:"Android",
+   desc:"Endless racer with HD graphics, realistic custom controls and low-end optimization.",
+   tags:["Unity","C#","AI"], img:IMG+"7.png", link:PLAY+"com.gamexis.racing.ferocity.apps"},
+  {t:"Mini Car Race", cat:"mobile", label:"Racing", plat:"Android",
+   desc:"Low-poly racer with a custom positioning system, tuned to run everywhere.",
+   tags:["Unity","C#","AI"], img:IMG+"6.png", link:PLAY+"com.ht.mini.car.raceway.endless.drive"},
+  {t:"Real City Car Parking", cat:"mobile", label:"Simulation", plat:"Android · iOS",
+   desc:"HD car-parking simulator built for mobile.",
+   tags:["Unity","C#"], img:IMG+"15.jpg", link:PLAY+"com.revgaming.parking.carparking.simulator"},
+  {t:"Rush Hour: Car Jump", cat:"mobile", label:"Hyper-casual", plat:"Android · iOS",
+   desc:"One-tap hyper-casual — keep the character jumping across moving traffic.",
+   tags:["Unity","C#"], img:IMG+"2.jpg", link:PLAY+"com.carjump.rushhour.funrun.trafficgame"},
+  {t:"FingeRate", cat:"mobile", label:"App · Rewards", plat:"Android · iOS",
+   desc:"Surveys-for-coupons app with authenticated accounts and a REST backend.",
+   tags:["Unity","C#","REST API","Auth"], img:IMG+"14.jpg", link:PLAY+"com.frs.fingerate"},
+  {t:"Commando Mission", cat:"mobile", label:"Action · FPS", plat:"Android", past:true,
+   desc:"Anti-terrorism commando shooter — mission-based FPS action with AI enemies. Earlier title.",
+   tags:["Unity","C#","AI"], glyph:"🎯"},
+
+  // ===== XR / Metaverse =====
+  {t:"Virtual World — Metaverse", cat:"xr", label:"Metaverse", plat:"PC · Cloud",
+   desc:"Multiplayer virtual world with spatial-audio voice chat, text chat, meeting rooms and an invite system.",
+   tags:["Unreal","Photon","Pixel Streaming"], img:IMG+"17.jpg", link:"https://drive.google.com/file/d/1n8IWp0c0G3ZtxEXlHRdcBQpUPLExvGoB/view"},
+  {t:"V.I.R.E", cat:"xr", label:"Immersive Real Estate", plat:"Cloud",
+   desc:"Virtually Immersive Real Estate — a real-estate & tourism experience streamed via pixel streaming.",
+   tags:["Unreal","Blueprints","Pixel Streaming"], img:IMG+"16.jpg", link:"https://www.youtube.com/watch?v=3Ypwt6WB_iw"},
+  {t:"Virtualist", cat:"xr", label:"Virtual Tours", plat:"PC",
+   desc:"Virtual tours, virtual staging and floor-map design — 3D walkthroughs built in Unity.",
+   tags:["Unity","C#"], img:IMG+"18.jpg", link:"https://drive.google.com/file/d/1lWctVGNBcrHu__rMoJBXg6CXU4KVsp2B/view"},
+  {t:"3D Model Viewer", cat:"xr", label:"Web · AR", plat:"Web · AR",
+   desc:"Web-based GLB/GLTF model viewer, AR-enabled and customizable.",
+   tags:["Babylon.js","AR"], img:IMG+"10.JPG", link:"https://irradiated-relic-specialist.glitch.me/"},
+  {t:"VR Showroom", cat:"xr", label:"Virtual Reality", plat:"VR",
+   desc:"VR showroom walkthrough with item descriptions and add-to-cart checkout.",
+   tags:["Unreal","VR"], glyph:"🕶️"},
+  {t:"Apartment Walkthrough", cat:"xr", label:"Archviz", plat:"PC",
+   desc:"First-person interior walkthrough with ray-traced lighting.",
+   tags:["Unreal","Ray Tracing"], glyph:"🏛️"},
+];
+
+/* ---------- render cards ---------- */
+const grid = document.getElementById('grid');
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function cardHTML(p){
+  const badges = [];
+  if(p.status==='live') badges.push('<span class="badge live">LIVE</span>');
+  if(p.status==='dev') badges.push('<span class="badge dev">IN DEV</span>');
+  if(p.installs) badges.push('<span class="badge inst">'+esc(p.installs)+' installs</span>');
+  if(p.rating) badges.push('<span class="badge rate">'+esc(p.rating)+'★</span>');
+  badges.push('<span class="badge plat">'+esc(p.plat)+'</span>');
+  const thumb = p.img
+    ? '<div class="thumb"><div class="badge-row">'+badges.join('')+'</div><img loading="lazy" src="'+p.img+'" alt="'+esc(p.t)+' — screenshot" onerror="this.style.display=\'none\'"></div>'
+    : '<div class="thumb ph"><div class="badge-row">'+badges.join('')+'</div><span class="glyph">'+(p.glyph||'▦')+'</span></div>';
+  const cat = esc(p.label) + (p.studio ? ' · <b>'+esc(p.studio)+'</b>' : '');
+  const tags = p.tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join('');
+  const link = p.link
+    ? '<span class="card-link">View on Google Play ↗</span><a class="stretch" href="'+p.link+'" target="_blank" rel="noopener" aria-label="'+esc(p.t)+' (opens in new tab)"></a>'
+    : '<span class="card-link disabled">'+(p.past ? 'Earlier title' : 'Coming soon')+'</span>';
+  return '<article class="card" data-cat="'+p.cat+'"><div class="glare"></div>'+thumb+
+    '<div class="card-body"><span class="card-cat">'+cat+'</span>'+
+    '<h3>'+esc(p.t)+'</h3><p>'+esc(p.desc)+'</p>'+
+    '<div class="tags">'+tags+'</div>'+link+'</div></article>';
+}
+grid.innerHTML = projects.map(cardHTML).join('');
+
+/* filtering */
+const filterBtns = document.querySelectorAll('.filter');
+filterBtns.forEach(btn=>btn.addEventListener('click',()=>{
+  filterBtns.forEach(b=>b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  const f = btn.dataset.filter;
+  document.querySelectorAll('.card').forEach(c=>{ c.style.display = (f==='all'||c.dataset.cat===f) ? '' : 'none'; });
+}));
+
+/* reveal on scroll */
+const io = new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const io2 = new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.transition='opacity .6s ease, transform .6s ease';x.target.style.opacity=1;x.target.style.transform='none';io2.unobserve(x.target);}})},{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity=0;c.style.transform='translateY(18px)';io2.observe(c);});
+
+/* ---------- card 3D tilt (hover-capable pointers only) ---------- */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(window.matchMedia('(hover: hover)').matches && !reduceMotion){
+  document.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('pointermove', ev=>{
+      const r = card.getBoundingClientRect();
+      const px = (ev.clientX - r.left)/r.width, py = (ev.clientY - r.top)/r.height;
+      const rx = (0.5 - py)*8, ry = (px - 0.5)*10;
+      card.style.transform = 'perspective(760px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-4px)';
+      card.style.setProperty('--mx', (px*100)+'%');
+      card.style.setProperty('--my', (py*100)+'%');
+    });
+    card.addEventListener('pointerleave', ()=>{ card.style.transform=''; });
+  });
+}
+
+/* ---------- Three.js 3D game gallery ---------- */
+(function(){
+  const mount = document.getElementById('scene');
+  const tip = document.getElementById('sceneTip');
+  if(!window.THREE || !mount){ if(mount){const fb=mount.querySelector('.scene-fallback'); if(fb) fb.classList.add('show');} return; }
+  const fallbackEl = mount.querySelector('.scene-fallback');
+
+  const tiles = [
+    {icon:"https://play-lh.googleusercontent.com/9pnhGo9nSo5C0Bc-SJkucL5Eas8on2Rotnys80eiBOWEkYUo8G17T6LBdHclr9lBYbzKardJfUEBLffWoGIK=s240", color:0x35c2ff, feat:1, title:"Fidget Toys 3D · 10M+", link:PLAY+"com.fidget.toys.pop.it.antistress.relaxation.game"},
+    {icon:"https://play-lh.googleusercontent.com/DrUtqhZfkdWZ9f39-IppF0HnFChG5bn8lcqakcXwK3DNNTKAY7SNxrr-DvyEzDqJ37KBECJ666HHoCsjzxhJVg=s240", color:0x37e0b0, feat:1, title:"Snake Jam Escape · LIVE", link:PLAY+"com.cobwebgames.snakejamescape"},
+    {icon:"https://play-lh.googleusercontent.com/bpa0AHQwg5Ky_DdfZH4niLJK7A-YRdbICBiBTLJDeB0ao54a8VgKWKODRAglEoRcazompEML0ZIIwZULDvP7Ew=s240", color:0xffb25a, feat:1, title:"Cat Burglar · 5M+", link:PLAY+"com.stickman.thief.puzzle.brain.games"},
+    {icon:"https://play-lh.googleusercontent.com/PAWgVvl4oCw6xmBixPuGuTSpZsaF07O4ruEf4QIFzH0NDVu1usrjbYz7snKvCD3IJOMa5z0NoMUX-sa2zOYEVw=s240", color:0x8b7cff, feat:1, title:"Bus Jam · LIVE", link:PLAY+"com.cobwebgames.busjam.crowdescape"},
+    {icon:"https://play-lh.googleusercontent.com/mhNzBoYWPyz7qiafJghPxrTOq3tKZqc4QJOmdAEdLbi6CSY10Zj5_jBmHKn1mywIlS2R-An3hLRPRPg7aCSsHg=s240", color:0x7ed957, feat:0, title:"Happy Farm Life · LIVE", link:PLAY+"com.cobwebgames.happy.farm.life"},
+    {icon:"https://play-lh.googleusercontent.com/opzA-O-HiJJwAd_8-yXQleoncBXMClTvCZYr3Z4U5RcMWVEpCerN0TRYdoCkxpbvFmJK-75odlIGaHyZCrB2mQg=s240", color:0xff6b9d, feat:0, title:"2248 Number Merge · 1M+", link:PLAY+"nummerge.number.match.puzzle.games"},
+    {icon:"https://play-lh.googleusercontent.com/YpmekAbHEQ6aps5p_AljgcExlAgvV-wTs9QSbKFwbZ4AjVA0Zh4EfhxLkLOooR7-KS_mSne9Qbpq8mNhGuqS=s240", color:0xff8fab, feat:0, title:"Fashion Store 3D · 1M+", link:PLAY+"com.supermarket.fashion.clothing.store.simulator"},
+    {icon:"https://play-lh.googleusercontent.com/yJKKneK8TOJY8N5c9kLPZXSzhR0NZFA19ui12_7BDjdzRwgQsbW44xLIJ5Htv61CkcTTXsXaTOd-5De-XDjc-Q=s240", color:0x5ce1e6, feat:0, title:"Sibling Adventure · 500K+", link:PLAY+"com.escape.puzzle.adventure.story"},
+  ];
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+  camera.position.set(0, 0, 6.2);
+  let renderer;
+  try{ renderer = new THREE.WebGLRenderer({alpha:true, antialias:true}); }
+  catch(e){ if(fallbackEl) fallbackEl.classList.add('show'); return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  mount.appendChild(renderer.domElement);
+
+  const group = new THREE.Group();
+  scene.add(group);
+  const loader = new THREE.TextureLoader(); loader.crossOrigin = 'anonymous';
+  const meshes = [];
+  const cols = 3, spacing = 1.42;
+  tiles.forEach((d,i)=>{
+    const col = i % cols, row = Math.floor(i/cols);
+    const holder = new THREE.Group();
+    const jz = (Math.random()*1.4 - 0.7);
+    holder.position.set((col-1)*spacing, (1-row)*spacing, jz);
+    holder.rotation.z = (Math.random()-0.5)*0.12;
+    holder.userData = {
+      baseX:holder.position.x, baseY:holder.position.y, baseZ:jz,
+      phase:Math.random()*Math.PI*2, link:d.link, title:d.title, hovered:0, scale:1
+    };
+    // glow frame for featured
+    const frameCol = d.feat ? 0x8b7cff : 0x2a2f4a;
+    const frame = new THREE.Mesh(new THREE.PlaneGeometry(1.34,1.34),
+      new THREE.MeshBasicMaterial({color:frameCol, transparent:true, opacity:d.feat?0.85:0.5}));
+    frame.position.z = -0.03;
+    holder.add(frame);
+    // tile
+    const mat = new THREE.MeshBasicMaterial({color:new THREE.Color(d.color), transparent:true});
+    const tile = new THREE.Mesh(new THREE.PlaneGeometry(1.2,1.2), mat);
+    tile.userData.holder = holder;
+    holder.add(tile);
+    meshes.push(tile);
+    group.add(holder);
+    loader.load(d.icon, tex=>{ tex.encoding = THREE.sRGBEncoding; mat.map = tex; mat.color.set(0xffffff); mat.needsUpdate = true; });
+  });
+
+  function resize(){
+    const w = mount.clientWidth, h = mount.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w/h; camera.updateProjectionMatrix();
+    // fit: nudge camera z on narrow screens
+    camera.position.z = w < 520 ? 7.4 : 6.2;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // interaction
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2(-2,-2);
+  let targetRotY = 0, targetRotX = 0, curRotY = 0, curRotX = 0;
+  let dragging = false, lastX = 0, lastY = 0, moved = 0, autoRot = 0.0016;
+  let hovered = null;
+
+  function setPointer(ev){
+    const r = mount.getBoundingClientRect();
+    pointer.x = ((ev.clientX - r.left)/r.width)*2 - 1;
+    pointer.y = -(((ev.clientY - r.top)/r.height)*2 - 1);
+    return r;
+  }
+  mount.addEventListener('pointermove', ev=>{
+    const r = setPointer(ev);
+    if(dragging){
+      const dx = ev.clientX - lastX, dy = ev.clientY - lastY;
+      moved += Math.abs(dx)+Math.abs(dy);
+      targetRotY += dx*0.006; targetRotX += dy*0.004;
+      targetRotX = Math.max(-0.6, Math.min(0.6, targetRotX));
+      lastX = ev.clientX; lastY = ev.clientY;
+    } else {
+      // subtle parallax when idle
+      targetRotY += ( (pointer.x*0.28) - (targetRotY - curRotYBase()) ) * 0; // handled in loop
+    }
+    // tooltip position
+    if(tip && tip.dataset.on==='1'){ tip.style.left=(ev.clientX-r.left)+'px'; tip.style.top=(ev.clientY-r.top)+'px'; }
+  });
+  function curRotYBase(){ return 0; }
+  mount.addEventListener('pointerdown', ev=>{ dragging=true; moved=0; lastX=ev.clientX; lastY=ev.clientY; mount.classList.add('dim'); mount.setPointerCapture&&mount.setPointerCapture(ev.pointerId); });
+  window.addEventListener('pointerup', ev=>{
+    if(dragging && moved < 7 && hovered && hovered.userData.link){ window.open(hovered.userData.link, '_blank', 'noopener'); }
+    dragging=false;
+  });
+  mount.addEventListener('pointerleave', ()=>{ pointer.x=-2; pointer.y=-2; if(tip){tip.style.opacity=0;tip.dataset.on='0';} });
+
+  let idleParallaxX = 0, idleParallaxY = 0;
+  mount.addEventListener('pointermove', ev=>{ if(!dragging){ idleParallaxX = pointer.x*0.3; idleParallaxY = -pointer.y*0.2; } });
+
+  const clock = new THREE.Clock();
+  let visible = true;
+  document.addEventListener('visibilitychange', ()=>{ visible = !document.hidden; });
+
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    const t = clock.getElapsedTime();
+
+    if(!reduceMotion){
+      if(!dragging){ targetRotY += autoRot; }
+      // ease rotation toward target + idle parallax
+      curRotY += ((targetRotY + idleParallaxX) - curRotY)*0.06;
+      curRotX += ((targetRotX + idleParallaxY) - curRotX)*0.06;
+      group.rotation.y = curRotY;
+      group.rotation.x = curRotX;
+      // bob each tile
+      group.children.forEach(h=>{
+        const u = h.userData;
+        h.position.y = u.baseY + Math.sin(t*0.9 + u.phase)*0.06;
+        h.position.z = u.baseZ + Math.cos(t*0.7 + u.phase)*0.05;
+      });
+    } else {
+      group.rotation.y = curRotY = targetRotY;
+      group.rotation.x = curRotX = targetRotX;
+    }
+
+    // hover detection
+    raycaster.setFromCamera(pointer, camera);
+    const hits = raycaster.intersectObjects(meshes, false);
+    const newHover = hits.length ? hits[0].object.userData.holder : null;
+    if(newHover !== hovered){
+      hovered = newHover;
+      if(hovered && tip){ tip.textContent = hovered.userData.title; tip.style.opacity=1; tip.dataset.on='1'; }
+      else if(tip){ tip.style.opacity=0; tip.dataset.on='0'; }
+      mount.style.cursor = hovered ? 'pointer' : 'grab';
+    }
+    // ease scale on all holders
+    group.children.forEach(h=>{
+      const target = (h===hovered)?1.16:1;
+      h.userData.scale += (target - h.userData.scale)*0.15;
+      h.scale.setScalar(h.userData.scale);
+      const fz = (h===hovered)?0.4:0;
+      // subtle pop forward handled by scale; keep rotation subtle
+    });
+
+    renderer.render(scene, camera);
+  }
+  frame();
+})();
+</script>
+</body>
+</html>
