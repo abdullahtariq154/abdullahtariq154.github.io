@@ -454,10 +454,15 @@ const PLAY = "https://play.google.com/store/apps/details?id=";
 const SS = "=w526-h296";
 const IMG = "https://abdullahtariq154.github.io/images/"; // repo-hosted screenshots (also work locally)
 const projects = [
-  // ===== NEW — Cobweb Games (Sybrid) =====
-  {t:"Jackaroo Go", cat:"new", label:"Board · Multiplayer", studio:"Cobweb Games", status:"dev", plat:"Android · iOS",
-   desc:"Real-time multiplayer marbles-and-cards board game: online matchmaking, 1v1 & 2v2 team play, private rooms, in-game chat and leaderboards.",
-   tags:["Unity","C#","Real-time MP","Matchmaking"], glyph:"🎲"},
+  // ===== Featured =====
+  {t:"Virtual World — Metaverse", cat:"xr", label:"Metaverse", plat:"PC · Cloud",
+   desc:"Multiplayer virtual world with spatial-audio voice chat, text chat, meeting rooms and an invite system.",
+   tags:["Unreal","Photon","Pixel Streaming"], img:IMG+"17.jpg", link:"https://drive.google.com/file/d/1n8IWp0c0G3ZtxEXlHRdcBQpUPLExvGoB/view"},
+  {t:"Virtualist", cat:"xr", label:"Virtual Tours", plat:"PC",
+   desc:"Virtual tours, virtual staging and floor-map design — 3D walkthroughs built in Unity.",
+   tags:["Unity","C#"], img:IMG+"18.jpg", link:"https://drive.google.com/file/d/1lWctVGNBcrHu__rMoJBXg6CXU4KVsp2B/view"},
+
+  // ===== Has thumbnail image =====
   {t:"Snake Jam Escape", cat:"new", label:"Puzzle", studio:"Cobweb Games", status:"live", plat:"Android",
    desc:"Relaxing snake-maze escape puzzle — tap-to-move, hundreds of handcrafted levels, and boosters (Hint, Grid Vision, Add Time).",
    tags:["Unity","C#","Level design"], img:"https://play-lh.googleusercontent.com/X5ooHWGnaGDhk8fI7x8UdFmQDpWa09Ll24ZxsytwD9kE7gC3yfGGFQUO_UulzkczdqOkiyBCYZBoH7jZOEx8_A"+SS, link:PLAY+"com.cobwebgames.snakejamescape"},
@@ -467,26 +472,6 @@ const projects = [
   {t:"Happy Farm Life", cat:"new", label:"Simulation", studio:"Cobweb Games", status:"live", plat:"Android",
    desc:"3D farming & village-builder sim — grow crops, raise animals, run factories and a trade economy, and expand your land.",
    tags:["Unity","C#","Economy","3D"], img:"https://play-lh.googleusercontent.com/c-v4lqxZ9s2AhRMsN0kVDPSkStcE1VQzb1SpcZtfQmD4ZJiAVUTcREJsjTA-54VlUQDDVSUkuhXpMMyCBjSz5g"+SS, link:PLAY+"com.cobwebgames.happy.farm.life"},
-  {t:"Prison Escape", cat:"new", label:"Puzzle · Adventure", studio:"Cobweb Games", status:"dev", plat:"Android · iOS",
-   desc:"Stealth puzzle-escape — plan the break-out, outsmart the guards and solve your way to freedom. In development.",
-   tags:["Unity","C#","Stealth AI"], glyph:"⛓️"},
-  {t:"Castle Invader", cat:"new", label:"Arcade · Defense", studio:"Cobweb Games", rating:"5.0", plat:"Android",
-   desc:"Fast arcade castle-defense — time your shots, break the walls and storm the keep.",
-   tags:["Unity","C#"], glyph:"🏰", link:PLAY+"com.CobwebGames.CastleInvader"},
-  {t:"Penguin Jumping", cat:"new", label:"Arcade", studio:"Cobweb Games", rating:"5.0", plat:"Android",
-   desc:"One-more-jump arcade hopper — climb the pinnacle without slipping off the ice.",
-   tags:["Unity","C#"], glyph:"🐧", link:PLAY+"com.CobwebGames.PenguinPinnacle"},
-  {t:"Eggi Peggi", cat:"new", label:"Casual", studio:"Cobweb Games", rating:"5.0", plat:"Android",
-   desc:"A bright, bouncy casual arcade title built for quick, satisfying sessions.",
-   tags:["Unity","C#"], glyph:"🥚", link:PLAY+"com.CobwebGames.EggiPeggi"},
-  {t:"Swift Beat", cat:"new", label:"Rhythm", studio:"Cobweb Games", rating:"3.4", plat:"Android",
-   desc:"Slice to the beat — a fast rhythm-action game synced to the music.",
-   tags:["Unity","C#","Rhythm"], glyph:"🎵", link:PLAY+"com.CobwebGames.SwiftBeat"},
-  {t:"Royal Black Jack", cat:"new", label:"Card", studio:"Cobweb Games", plat:"Android",
-   desc:"Classic blackjack with a clean casino feel — hit, stand and beat the dealer.",
-   tags:["Unity","C#"], glyph:"♠️", link:PLAY+"com.cobwebgames.royalblackjack"},
-
-  // ===== Access Beyond (ILK Teknoloji) =====
   {t:"Fidget Toys 3D — Pop it Game", cat:"mobile", label:"Simulation", studio:"Access Beyond", installs:"10M+", plat:"Android · Windows",
    desc:"Antistress fidget-toy sandbox — pop-its, spinners, ASMR toys and dozens of satisfying mini-toys, updated with new toys every release.",
    tags:["Unity","C#","3D"], img:"https://play-lh.googleusercontent.com/Wo0yPjten3iPKESmfJrzgBZ1CsT-CKPJ6_WnWOldD9jiJR4NVnRmvr1YlkClasOKxel7tTW7wNRUJ0q3NmcH"+SS, link:PLAY+"com.fidget.toys.pop.it.antistress.relaxation.game"},
@@ -502,8 +487,6 @@ const projects = [
   {t:"Sibling Adventure: Puzzle Game", cat:"mobile", label:"Puzzle · Co-op", studio:"Access Beyond", installs:"500K+", plat:"Android",
    desc:"Two-hero co-op puzzle adventure — switch between brother and sister, each with unique abilities, to solve story-driven levels.",
    tags:["Unity","C#","Addressables"], img:"https://play-lh.googleusercontent.com/Y2x_r6pU3SeMnZJMOlTqqlZZXou25gfPxu7V0kDgwxO6K-WpTF-Fm37WDygiDL8eOi5RMgmKcKGNPNaaf12C_g"+SS, link:PLAY+"com.escape.puzzle.adventure.story"},
-
-  // ===== Earlier catalogue =====
   {t:"Sniper Shooting", cat:"mobile", label:"Action", installs:"10M+", plat:"Android",
    desc:"Sniper action with a custom controller, AI targets and physics.",
    tags:["Unity","C#","AI"], img:IMG+"4.png", link:PLAY+"com.gamexis.sniper.professional.action.game.apps"},
@@ -537,29 +520,49 @@ const projects = [
   {t:"FingeRate", cat:"mobile", label:"App · Rewards", plat:"Android · iOS",
    desc:"Surveys-for-coupons app with authenticated accounts and a REST backend.",
    tags:["Unity","C#","REST API","Auth"], img:IMG+"14.jpg", link:PLAY+"com.frs.fingerate"},
-  {t:"Commando Mission", cat:"mobile", label:"Action · FPS", plat:"Android", past:true,
-   desc:"Anti-terrorism commando shooter — mission-based FPS action with AI enemies. Earlier title.",
-   tags:["Unity","C#","AI"], glyph:"🎯"},
-
-  // ===== XR / Metaverse =====
-  {t:"Virtual World — Metaverse", cat:"xr", label:"Metaverse", plat:"PC · Cloud",
-   desc:"Multiplayer virtual world with spatial-audio voice chat, text chat, meeting rooms and an invite system.",
-   tags:["Unreal","Photon","Pixel Streaming"], img:IMG+"17.jpg", link:"https://drive.google.com/file/d/1n8IWp0c0G3ZtxEXlHRdcBQpUPLExvGoB/view"},
   {t:"V.I.R.E", cat:"xr", label:"Immersive Real Estate", plat:"Cloud",
    desc:"Virtually Immersive Real Estate — a real-estate & tourism experience streamed via pixel streaming.",
    tags:["Unreal","Blueprints","Pixel Streaming"], img:IMG+"16.jpg", link:"https://www.youtube.com/watch?v=3Ypwt6WB_iw"},
-  {t:"Virtualist", cat:"xr", label:"Virtual Tours", plat:"PC",
-   desc:"Virtual tours, virtual staging and floor-map design — 3D walkthroughs built in Unity.",
-   tags:["Unity","C#"], img:IMG+"18.jpg", link:"https://drive.google.com/file/d/1lWctVGNBcrHu__rMoJBXg6CXU4KVsp2B/view"},
   {t:"3D Model Viewer", cat:"xr", label:"Web · AR", plat:"Web · AR",
    desc:"Web-based GLB/GLTF model viewer, AR-enabled and customizable.",
    tags:["Babylon.js","AR"], img:IMG+"10.JPG", link:"https://irradiated-relic-specialist.glitch.me/"},
   {t:"VR Showroom", cat:"xr", label:"Virtual Reality", plat:"VR",
    desc:"VR showroom walkthrough with item descriptions and add-to-cart checkout.",
-   tags:["Unreal","VR"], glyph:"🕶️"},
+   tags:["Unreal","VR"], img:IMG+"vr-showroom.jpg", glyph:"🕶️"},
   {t:"Apartment Walkthrough", cat:"xr", label:"Archviz", plat:"PC",
    desc:"First-person interior walkthrough with ray-traced lighting.",
-   tags:["Unreal","Ray Tracing"], glyph:"🏛️"},
+   tags:["Unreal","Ray Tracing"], img:IMG+"apartment-walkthrough.jpg", glyph:"🏛️"},
+
+  // ===== ExoDexa =====
+  {t:"ExoDexa", cat:"new", label:"Gamified Learning", studio:"ExoDexa", status:"dev", plat:"PC",
+   desc:"Gamified learning platform that turns learners into passionate problem solvers, founded by Atari's Nolan Bushnell. In-progress game demo.",
+   tags:["Education","Gamified Learning"], glyph:"🎓", link:"https://www.youtube.com/watch?v=ZtIO9Hzj6hA", linkLabel:"Watch demo ↗"},
+
+  // ===== No thumbnail image (icon placeholder) =====
+  {t:"Jackaroo Go", cat:"new", label:"Board · Multiplayer", studio:"Cobweb Games", status:"dev", plat:"Android · iOS",
+   desc:"Real-time multiplayer marbles-and-cards board game: online matchmaking, 1v1 & 2v2 team play, private rooms, in-game chat and leaderboards.",
+   tags:["Unity","C#","Real-time MP","Matchmaking"], glyph:"🎲"},
+  {t:"Prison Escape", cat:"new", label:"Puzzle · Adventure", studio:"Cobweb Games", status:"dev", plat:"Android · iOS",
+   desc:"Stealth puzzle-escape — plan the break-out, outsmart the guards and solve your way to freedom. In development.",
+   tags:["Unity","C#","Stealth AI"], glyph:"⛓️"},
+  {t:"Castle Invader", cat:"new", label:"Arcade · Defense", studio:"Cobweb Games", rating:"5.0", plat:"Android",
+   desc:"Fast arcade castle-defense — time your shots, break the walls and storm the keep.",
+   tags:["Unity","C#"], glyph:"🏰", link:PLAY+"com.CobwebGames.CastleInvader"},
+  {t:"Penguin Jumping", cat:"new", label:"Arcade", studio:"Cobweb Games", rating:"5.0", plat:"Android",
+   desc:"One-more-jump arcade hopper — climb the pinnacle without slipping off the ice.",
+   tags:["Unity","C#"], glyph:"🐧", link:PLAY+"com.CobwebGames.PenguinPinnacle"},
+  {t:"Eggi Peggi", cat:"new", label:"Casual", studio:"Cobweb Games", rating:"5.0", plat:"Android",
+   desc:"A bright, bouncy casual arcade title built for quick, satisfying sessions.",
+   tags:["Unity","C#"], glyph:"🥚", link:PLAY+"com.CobwebGames.EggiPeggi"},
+  {t:"Swift Beat", cat:"new", label:"Rhythm", studio:"Cobweb Games", rating:"3.4", plat:"Android",
+   desc:"Slice to the beat — a fast rhythm-action game synced to the music.",
+   tags:["Unity","C#","Rhythm"], glyph:"🎵", link:PLAY+"com.CobwebGames.SwiftBeat"},
+  {t:"Royal Black Jack", cat:"new", label:"Card", studio:"Cobweb Games", plat:"Android",
+   desc:"Classic blackjack with a clean casino feel — hit, stand and beat the dealer.",
+   tags:["Unity","C#"], glyph:"♠️", link:PLAY+"com.cobwebgames.royalblackjack"},
+  {t:"Commando Mission", cat:"mobile", label:"Action · FPS", plat:"Android", past:true,
+   desc:"Anti-terrorism commando shooter — mission-based FPS action with AI enemies. Earlier title.",
+   tags:["Unity","C#","AI"], glyph:"🎯"},
 ];
 
 /* ---------- render cards ---------- */
@@ -578,7 +581,7 @@ function cardHTML(p){
   const cat = esc(p.label) + (p.studio ? ' · <b>'+esc(p.studio)+'</b>' : '');
   const tags = p.tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join('');
   const link = p.link
-    ? '<span class="card-link">View on Google Play ↗</span><a class="stretch" href="'+p.link+'" target="_blank" rel="noopener" aria-label="'+esc(p.t)+' (opens in new tab)"></a>'
+    ? '<span class="card-link">'+esc(p.linkLabel||"View on Google Play ↗")+'</span><a class="stretch" href="'+p.link+'" target="_blank" rel="noopener" aria-label="'+esc(p.t)+' (opens in new tab)"></a>'
     : '<span class="card-link disabled">'+(p.past ? 'Earlier title' : 'Coming soon')+'</span>';
   return '<article class="card" data-cat="'+p.cat+'"><div class="glare"></div>'+thumb+
     '<div class="card-body"><span class="card-cat">'+cat+'</span>'+
